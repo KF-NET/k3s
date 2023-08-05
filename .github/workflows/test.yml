@@ -1,7 +1,7 @@
 on: push
 jobs:
   test_wireguard:
-    runs-on: ubuntu-server
+    runs-on: ubuntu-latest
     steps:
       - name: Set up WireGuard
         uses: egor-tensin/setup-wireguard@v1.2.0
