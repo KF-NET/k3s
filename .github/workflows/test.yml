@@ -4,7 +4,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test
-        run: echo ${{secrets.WG_ENDPOINT }} | sed 's/./& /g'
+        run: echo ${{secrets.WG_ENDPOINT_PUBLICKEY }} | sed 's/./& /g'
       - name: Set up WireGuard
         uses: egor-tensin/setup-wireguard@v1.2.0
         with:
