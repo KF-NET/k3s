@@ -9,7 +9,7 @@ jobs:
         uses: egor-tensin/setup-wireguard@v1.2.0
         with:
           endpoint: ${{ secrets.WG_ENDPOINT }}
-          endpoint_public_key: ${{ secrets.WG_ENDPOINT_PUBLICKEY }}
+          endpoint_public_key: ${{ secrets.WG_ENDPOINT_PUBKEY }}
           ips: 172.16.16.100/24
           allowed_ips: 10.4.0.0/24
           private_key: ${{ secrets.WG_CLIENT_PRIVKEY }}
