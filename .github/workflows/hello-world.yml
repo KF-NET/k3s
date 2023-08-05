@@ -13,21 +13,21 @@ jobs:
           private_key: ${{ secrets.WG_CLIENT_PRIVKEY }}
 
       - name: "Create Namespace"
-          uses: neosec-com/kubectl-aws-eks@1.1.2
+        uses: neosec-com/kubectl-aws-eks@1.1.2
           env:
             KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
           with:
             args: kubectl create namespace hello-world
 
       - name: "Create configmap"
-          uses: neosec-com/kubectl-aws-eks@1.1.2
+        uses: neosec-com/kubectl-aws-eks@1.1.2
           env:
             KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
           with:
             args: kubectl -n hello-world create configmap hello-world --from-file k3s/hello-world/index.html
 
       - name: "Deployment"
-          uses: neosec-com/kubectl-aws-eks@1.1.2
+        uses: neosec-com/kubectl-aws-eks@1.1.2
           env:
             KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
           with:
