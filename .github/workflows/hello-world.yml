@@ -1,6 +1,6 @@
 on: push
 jobs:
-  test_wireguard:
+  hello-world-deployment:
     runs-on: ubuntu-latest
     steps:
       - name: Set up WireGuard
@@ -11,6 +11,9 @@ jobs:
           ips: 192.168.253.10/24
           allowed_ips: 192.168.253.0/24, 10.4.0.0/24
           private_key: ${{ secrets.WG_CLIENT_PRIVKEY }}
+          
+      - name: Check out repository code
+        uses: actions/checkout@v3
 
       - name: "Create Namespace"
         uses: neosec-com/kubectl-aws-eks@1.1.2
