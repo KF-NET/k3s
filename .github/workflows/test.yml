@@ -9,7 +9,7 @@ jobs:
           endpoint: ${{ secrets.WG_ENDPOINT }}
           endpoint_public_key: ${{ secrets.WG_ENDPOINT_PUBKEY }}
           ips: 192.168.253.10/24
-          allowed_ips: 10.4.0.0/24
+          allowed_ips: 192.168.253.0/24, 10.4.0.0/24
           private_key: ${{ secrets.WG_CLIENT_PRIVKEY }}
       - name: "Test K3s API"
         uses: sozo-design/curl@v1.0.2
