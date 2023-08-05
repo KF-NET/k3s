@@ -1,6 +1,6 @@
 on: push
 jobs:
-  test_wireguard:
+  deployment_test_deployment:
     runs-on: ubuntu-latest
     steps:
       - name: Set up WireGuard
@@ -11,7 +11,9 @@ jobs:
           ips: 192.168.253.10/24
           allowed_ips: 192.168.253.0/24, 10.4.0.0/24
           private_key: ${{ secrets.WG_CLIENT_PRIVKEY }}
-      - name: "Ensure Blockage"
-        uses: sozo-design/curl@v1.0.2
+      - name: Deploy to cluster
+        uses: neosec-com/kubectl-aws-eks@1.1.2
+        env:
+          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
-          args: --insecure https://192.168.253.1/
+          args: kubectl apply -f k3s/test_deployment.yml
