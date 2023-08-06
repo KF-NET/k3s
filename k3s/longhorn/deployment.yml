@@ -3972,6 +3972,8 @@ apiVersion: networking.k8s.io/v1
 metadata:
   name: longhorn-ingress
   namespace: longhorn-system
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
 spec:
   rules:
   - host: "longhorn.svc.kfnet.it"
