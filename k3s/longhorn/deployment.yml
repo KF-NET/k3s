@@ -3968,6 +3968,7 @@ spec:
     nodePort: null
 ---
 kind: Ingress
+apiVersion: networking.k8s.io/v1
 metadata:
   name: longhorn-ingress
   namespace: longhorn-system
