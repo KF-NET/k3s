@@ -1,9 +1,12 @@
 on:
   pull_request:
     branches: [master]
+    types:
+      - closed
 jobs:
   hello-world-deployment:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
     steps:
       - name: Set up WireGuard
         uses: egor-tensin/setup-wireguard@v1.2.0
