@@ -3974,7 +3974,8 @@ metadata:
   namespace: longhorn-system
 spec:
   rules:
-  - http:
+  - host: "longhorn.svc.kfnet.it"
+    http:
       paths:
       - pathType: Prefix
         path: "/"
