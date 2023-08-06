@@ -3967,6 +3967,22 @@ spec:
     targetPort: http
     nodePort: null
 ---
+kind: Ingress
+metadata:
+  name: longhorn-ingress
+  namespace: longhorn-system
+  spec:
+    rules:
+      - http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: longhorn-frontend
+              port:
+                number: 80
+---
 # Source: longhorn/templates/services.yaml
 apiVersion: v1
 kind: Service
