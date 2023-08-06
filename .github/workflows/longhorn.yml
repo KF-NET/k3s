@@ -23,6 +23,6 @@ jobs:
       - name: "Deploy Longhorn"
         uses: actions-hub/kubectl@master
         env:
-          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
           args: apply -f k3s/longhorn/deployment.yml
