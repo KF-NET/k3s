@@ -11,9 +11,8 @@ metadata:
   name: hello-world
   namespace: hello-world
   annotations:
-    kubernetes.io/ingress.class: "traefik"
     traefik.ingress.kubernetes.io/router.tls: "true"
-    cert-manager.io/cluster-issuer: letsencryt-kfnet-it
+    cert-manager.io/cluster-issuer: kfnet-it
 spec:
   ingressClassName: traefik
   rules:
