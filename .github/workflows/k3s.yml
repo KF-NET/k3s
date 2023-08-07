@@ -28,7 +28,6 @@ jobs:
         with:
           args: apply -f k3s/longhorn/deployment.yml
 
-jobs:
   hello-world-deployment:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
